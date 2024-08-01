@@ -1,0 +1,70 @@
+.sidebar-content {
+  background: #ffffff;
+}
+
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar-logo {
+    width: 12rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .menu-category {
+    color: #718096;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem;
+  }
+  
+  .menu-item-new {
+    background-color: #787c80;
+    color: #fff;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-width: 0.2rem;
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  
+  .user-avatar {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-name {
+    font-size: 0.875rem;
+    font-weight: medium;
+  }
+  
+  .user-role {
+    color: #a0aec0;
+    font-size: 0.75rem;
+  }
+  

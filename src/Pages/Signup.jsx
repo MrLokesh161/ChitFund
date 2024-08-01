@@ -111,7 +111,7 @@ const Signup = () => {
 
           <p className="mt-6 text-center text-sm text-gray-600">
             Existing to Chitfund?{" "}
-            <a href="/signin" className="text-blue-600 hover:underline">
+            <a href="/" className="text-blue-600 hover:underline">
               Already have account
             </a>
           </p>

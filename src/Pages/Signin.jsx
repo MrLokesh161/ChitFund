@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = (event) => {
+    event.preventDefault();
+    if (username.toLowerCase() === "tester" && password.toLowerCase() === "tester") {
+      navigate("/user");
+    } else {
+      setError("Invalid username or password.");
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen">
       {/* Image Section */}
@@ -20,7 +35,7 @@ const LoginForm = () => {
             Welcome to ChitFund
           </h1>
           <p className="text-md text-gray-600 mb-6">Your Admin Dashboard</p>
-          <p className="text-4xl sm:hidden md:bg-transparent sm:w-full  text-gray-600 absolute top-4 left-4 font-bold">
+          <p className="text-4xl sm:hidden md:bg-transparent sm:w-full text-gray-600 absolute top-4 left-4 font-bold">
             <span className="text-red-500">💰</span> Chit Fund
           </p>
           <div className="flex flex-col md:flex-row md:space-x-4 mb-6">
@@ -38,7 +53,9 @@ const LoginForm = () => {
             or sign in with
           </p>
 
-          <form>
+          {error && <p className="text-center text-red-500 mb-4">{error}</p>}
+
+          <form onSubmit={handleLogin}>
             <div className="mb-4">
               <label
                 htmlFor="username"
@@ -50,6 +67,8 @@ const LoginForm = () => {
                 type="text"
                 id="username"
                 name="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
@@ -65,6 +84,8 @@ const LoginForm = () => {
                 type="password"
                 id="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
               />
             </div>
@@ -79,7 +100,7 @@ const LoginForm = () => {
 
           <p className="mt-6 text-center text-sm text-gray-600">
             New to ChitFund?{" "}
-            <a href="/" className="text-blue-600 hover:underline">
+            <a href="/signup" className="text-blue-600 hover:underline">
               Create an account
             </a>
           </p>
